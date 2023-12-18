@@ -1,0 +1,19 @@
+[Unit]
+Description=Bor execution layer for Polygon
+After=syslog.target network.target
+Wants=network-online.target
+
+[Service]
+SyslogIdentifier=bor
+ExecStart=/bin/bash -c '/opt/erigon/bin/erigon server \
+  --config /var/lib/bor/config.toml"'
+StandardOutput=syslog
+StandardError=syslog
+RestartSec=3
+Restart=always
+User=erigon
+Group=erigon
+KillSignal=SIGINT
+
+[Install]
+WantedBy=multi-user.target
