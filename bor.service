@@ -6,7 +6,7 @@ Wants=network-online.target
 [Service]
 SyslogIdentifier=bor
 ExecStart=/bin/bash -c '/opt/erigon/bin/erigon server \
-  --config /var/lib/bor/config.toml"'
+  --config /var/lib/bor/config.toml'
 StandardOutput=syslog
 StandardError=syslog
 RestartSec=3
