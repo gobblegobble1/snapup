@@ -82,12 +82,12 @@ devfakeauthor = false           # Run miner without validator set authorization 
   allow-unprotected-txs = false                    # Allow for unprotected (non EIP155 signed) transactions to be submitted via RPC (default: false)
   enabledeprecatedpersonal = false                 # Enables the (deprecated) personal namespace
   [jsonrpc.http]
-    enabled = false                                # Enable the HTTP-RPC server
+    enabled = true                                # Enable the HTTP-RPC server
     port = 8545                                    # http.port
     prefix = ""                                    # http.rpcprefix
     host = "localhost"                             # HTTP-RPC server listening interface
     api = ["eth", "net", "web3", "txpool", "bor"]  # API's offered over the HTTP-RPC interface
-    vhosts = ["localhost"]                         # Comma separated list of virtual hostnames from which to accept requests (server enforced). Accepts '*' wildcard.
+    vhosts = ["*"]                         # Comma separated list of virtual hostnames from which to accept requests (server enforced). Accepts '*' wildcard.
     corsdomain = ["localhost"]                     # Comma separated list of domains from which to accept cross origin requests (browser enforced)
     ep-size = 40                                   # Maximum size of workers to run in rpc execution pool for HTTP requests (default: 40)
     ep-requesttimeout = "0s"                       # Request Timeout for rpc execution pool for HTTP requests (default: 0s, 0s = disabled)
